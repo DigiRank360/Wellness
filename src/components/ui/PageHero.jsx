@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function PageHero({ title, subtitle, image, crumbs = [] }) {
   return (
-    <section className="container-x">
+    <section className="container-x pt-6 md:pt-8">
       <div className="relative flex min-h-[300px] items-center overflow-hidden rounded-[2rem] bg-brand-dark md:min-h-[380px]">
         <img src={image} alt="" className="absolute inset-0 h-full w-full object-cover opacity-50 animate-fade-in" />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/70 to-transparent" />

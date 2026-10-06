@@ -14,9 +14,7 @@ const cards = [
 export default function Contact() {
   return (
     <>
-      <div className="pt-6">
-        <PageHero title="Contact Us" subtitle="We are here to help you begin your wellness journey." image={IMG.contact} crumbs={['Contact']} />
-      </div>
+      <PageHero title="Contact Us" subtitle="We are here to help you begin your wellness journey." image={IMG.contact} crumbs={['Contact']} />
       <section className="container-x pb-20 pt-24">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map(([Icon, t, d], i) => (
