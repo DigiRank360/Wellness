@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Clock, Mail, MapPin, MessageCircle, Phone, Send } from 'lucide-react'
-import { contactInfo } from '../../data/content'
+import { contactInfo, serviceOptions } from '../../data/content'
 import Reveal from '../ui/Reveal'
 import SectionHeading from '../ui/SectionHeading'
 
@@ -8,8 +8,8 @@ const field = 'w-full rounded-xl border border-ink/10 bg-white px-4 py-3 text-sm
 
 const info = [
   [MapPin, 'Address', contactInfo.address, null],
-  [Phone, 'Phone', contactInfo.phone, `tel:${contactInfo.phone.replace(/\s/g, '')}`],
-  [MessageCircle, 'WhatsApp', contactInfo.whatsapp, `https://wa.me/91${contactInfo.whatsapp.replace(/\D/g, '')}`],
+  ...contactInfo.phones.map((p, i) => [Phone, i === 0 ? 'Phone' : 'Phone 2', p, `tel:${p.replace(/\s/g, '')}`]),
+  [MessageCircle, 'WhatsApp', contactInfo.phones[0], `https://wa.me/91${contactInfo.phones[0].replace(/\D/g, '')}`],
   [Mail, 'Email', contactInfo.email, `mailto:${contactInfo.email}`],
   [Clock, 'Working Hours', 'Mon - Sat: 8:00 - 20:00, Sun: 9:00 - 14:00', null],
 ]
@@ -56,7 +56,7 @@ export default function ContactEnquiry() {
               <input required name="email" type="email" className={field} placeholder="Email Address*" />
               <select name="service" className={field} defaultValue="">
                 <option value="" disabled>Select service</option>
-                <option>Ayurveda</option><option>Gym</option><option>Swimming Pool</option><option>General enquiry</option>
+                {serviceOptions.map((s) => <option key={s}>{s}</option>)}
               </select>
               <textarea required name="message" rows="5" className={`${field} sm:col-span-2`} placeholder="Your message*" />
             </div>

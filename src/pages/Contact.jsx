@@ -6,7 +6,9 @@ import { IMG, contactInfo } from '../data/content'
 
 const cards = [
   [MapPin, 'Address', contactInfo.address],
-  [Phone, 'Phone', contactInfo.phone],
+  [Phone, 'Phone', contactInfo.phones.map((p) => (
+    <a key={p} href={`tel:${p.replace(/\s/g, '')}`} className="block hover:text-accent">{p}</a>
+  ))],
   [Mail, 'Email', contactInfo.email],
   [Clock, 'Working Hours', 'Mon - Sat: 8:00 - 20:00'],
 ]

@@ -27,14 +27,14 @@ export default function Header() {
     <header className="fixed inset-x-0 top-0 z-50">
       <div className={`hidden bg-brand-dark text-[12px] text-white/80 transition-all duration-300 md:block ${scrolled ? 'h-0 overflow-hidden opacity-0' : 'h-9 opacity-100'}`}>
         <div className="container-x flex h-9 items-center justify-between">
-          <span>{contactInfo.phone} &nbsp;|&nbsp; {contactInfo.email}</span>
+          <span>{contactInfo.phones.join(' / ')} &nbsp;|&nbsp; {contactInfo.email}</span>
           <span>Mon - Sat: 8:00 AM - 8:00 PM</span>
         </div>
       </div>
 
       <div className={`transition-all duration-300 ${scrolled ? 'bg-white/90 shadow-md backdrop-blur-md' : 'bg-white'}`}>
         <div className="container-x flex items-center justify-between py-2">
-          <Link to="/"><Logo className={scrolled ? 'h-12' : 'h-14'} /></Link>
+          <Link to="/"><Logo className={scrolled ? 'h-16' : 'h-16'} /></Link>
 
           <nav className="hidden items-center gap-9 lg:flex">
             {nav.map((item) =>

@@ -53,21 +53,23 @@ export default function ServicePage({ data }) {
         </div>
       </section>
 
-      <section className="container-x py-20">
-        <div className="mb-10"><SectionHeading center tag="Pricing" title={data.plansTitle} /></div>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {data.plans.map(([name, price, meta], i) => (
-            <Reveal key={name} delay={i * 100}>
-              <div className="card-lift h-full rounded-3xl border border-mint bg-white p-7 text-center">
-                <h3 className="font-semibold text-brand-dark">{name}</h3>
-                <div className="my-4 text-3xl font-extrabold text-accent">{price}</div>
-                <span className="inline-block rounded-full bg-mint px-3 py-1 text-xs text-brand">{meta}</span>
-                <Link to="/contact" className="btn-outline mt-6 w-full !py-2.5">Enquire</Link>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
+      {data.plans.length > 0 && (
+        <section className="container-x py-20">
+          <div className="mb-10"><SectionHeading center tag="Pricing" title={data.plansTitle} /></div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {data.plans.map(([name, price, meta], i) => (
+              <Reveal key={name} delay={i * 100}>
+                <div className="card-lift h-full rounded-3xl border border-mint bg-white p-7 text-center">
+                  <h3 className="font-semibold text-brand-dark">{name}</h3>
+                  <div className="my-4 text-3xl font-extrabold text-accent">{price}</div>
+                  {meta && <span className="inline-block rounded-full bg-mint px-3 py-1 text-xs text-brand">{meta}</span>}
+                  <Link to="/contact" className="btn-outline mt-6 w-full !py-2.5">Enquire</Link>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+      )}
 
       <CTABanner />
     </>

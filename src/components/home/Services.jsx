@@ -9,7 +9,7 @@ export default function Services() {
     <section className="container-x">
       <div className="rounded-[2rem] bg-mint p-8 md:p-14">
         <SectionHeading tag="Our services" title="Explore our services" />
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {segments.map(([t, d, src, to], i) => (
             <Reveal key={t} delay={i * 120}>
               <Link to={to} className="card-lift group block h-full overflow-hidden rounded-3xl bg-white">

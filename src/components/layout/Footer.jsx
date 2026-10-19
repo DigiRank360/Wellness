@@ -12,7 +12,7 @@ const socials = [
 
 const links = [
   ['Home', '/'], ['About Us', '/about'],
-  ['Ayurveda', '/services/ayurveda'], ['Gym', '/services/gym'],
+  ['Ayurveda', '/services/ayurveda'], ['Physiotherapy & Gym', '/services/gym'],
   ['Swimming Pool', '/services/swimming-pool'],
   ['Pool Parties & Group', '/services/pool-parties-and-group'], ['Reviews', '/reviews'],
   ['Contact', '/contact'],
@@ -22,8 +22,8 @@ const hours = [['Monday to Friday', '8.00 - 20.00 hrs'], ['Saturday', '8.00 - 18
 
 const contacts = [
   [MapPin, contactInfo.address],
-  [Phone, contactInfo.phone, `tel:${contactInfo.phone.replace(/\s/g, '')}`],
-  [MessageCircle, `WhatsApp: ${contactInfo.whatsapp}`, `https://wa.me/91${contactInfo.whatsapp.replace(/\D/g, '')}`],
+  ...contactInfo.phones.map((p) => [Phone, p, `tel:${p.replace(/\s/g, '')}`]),
+  [MessageCircle, `WhatsApp: ${contactInfo.phones[0]}`, `https://wa.me/91${contactInfo.phones[0].replace(/\D/g, '')}`],
   [Mail, contactInfo.email, `mailto:${contactInfo.email}`],
 ]
 
@@ -49,7 +49,7 @@ export default function Footer() {
           <div className="order-1 flex flex-col items-center md:order-3 md:col-span-2 lg:order-2 lg:col-span-1">
             <Logo className="h-16" />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink/80">
-              Swim, heal, detox, rejuvenate and strengthen with authentic Ayurveda guided by experienced vaidyas.
+              Ayurveda | Naturopathy | Physiotherapy | Gymnasium | Aqua Therapy | Swimming Pool. Reconnect with Nature. Restore Your Balance. Rediscover Your Wellbeing.
             </p>
             <ul className="mt-4 space-y-2 text-xs text-ink/80">
               {contacts.map(([Icon, text, href]) => (
@@ -84,7 +84,7 @@ export default function Footer() {
         </div>
 
         <div className="relative mt-12 flex flex-col items-center gap-4 rounded-t-3xl bg-white px-6 py-5 text-xs text-ink/80 sm:flex-row sm:justify-between">
-          <span className="text-center sm:text-left">© {new Date().getFullYear()} Yogananda Ayurveda. All Rights Reserved</span>
+          <span className="text-center sm:text-left">© {new Date().getFullYear()} Yogananda Wellness. All Rights Reserved</span>
           <button
             type="button"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}

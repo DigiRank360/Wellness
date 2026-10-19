@@ -4,6 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes wellness-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -47,6 +56,9 @@
   }
   .text-gradient {
     @apply bg-gradient-to-r from-brand via-teal to-brand-light bg-clip-text text-transparent;
+  }
+  .wellness-marquee-track {
+    animation: wellness-marquee 120s linear infinite;
   }
 }
 

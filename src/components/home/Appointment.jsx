@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { IMG } from '../../data/content'
+import { IMG, serviceOptions } from '../../data/content'
 import Reveal from '../ui/Reveal'
 
 const field = 'w-full rounded-xl border border-transparent bg-white px-4 py-3 text-sm text-ink placeholder:text-ink/50 outline-none transition focus:border-accent focus:ring-4 focus:ring-white/30'
@@ -29,7 +29,7 @@ export default function Appointment() {
               <input required className={field} placeholder="Email Address*" type="email" />
               <select className={field} defaultValue="">
                 <option value="" disabled>Select service</option>
-                <option>Ayurveda</option><option>Gym</option><option>Swimming Pool</option>
+                {serviceOptions.map((s) => <option key={s}>{s}</option>)}
               </select>
               <input className={field} type="date" />
               <textarea className={`${field} sm:col-span-2`} rows="4" placeholder="Write a message" />

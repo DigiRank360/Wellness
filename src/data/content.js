@@ -1,6 +1,8 @@
 const img = (id, w = 800) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=70`
 
+const svc = (name) => `/images/services/${name}.jpg`
+
 export const IMG = {
   hero: img('photo-1544161515-4ab6ce6db874', 1600),
   about: img('photo-1545205597-3d9d02c29597', 900),
@@ -31,7 +33,7 @@ export const IMG = {
 
 export const serviceLinks = [
   { label: 'Ayurveda', to: '/services/ayurveda' },
-  { label: 'Gym', to: '/services/gym' },
+  { label: 'Physiotherapy & Gym', to: '/services/gym' },
   { label: 'Swimming Pool', to: '/services/swimming-pool' },
   { label: 'Pool Parties & Group', to: '/services/pool-parties-and-group' },
 ]
@@ -45,10 +47,12 @@ export const nav = [
 ]
 
 export const segments = [
-  ['Ayurveda', 'Classical therapies, Panchakarma detox and personalised herbal care.', IMG.ayur1, '/services/ayurveda'],
-  ['Gym', 'Modern equipment, certified trainers and programmes built for strength.', IMG.gym1, '/services/gym'],
-  ['Swimming Pool', 'Temperature-controlled pool for lap swimming, coaching and aqua therapy.', IMG.pool1, '/services/swimming-pool'],
-  ['Pool Parties & Group', 'Bring friends, family or your group together for a poolside celebration.', IMG.poolHero, '/services/pool-parties-and-group'],
+  ['Physical Wellness', 'Personalized Ayurveda, Panchakarma and naturopathy—including herbal treatments, cleansing, detox and mud therapy—to support rest, rejuvenation and physical balance.', svc('physical-wellness'), '/services/ayurveda'],
+  ['Ayurveda & Panchakarma', 'Explore traditional Ayurvedic care and personalized Panchakarma programs designed to support cleansing, balance and rejuvenation.', svc('ayurveda-panchakarma'), '/services/ayurveda'],
+  ['Physiotherapy & Fitness', 'Physiotherapy, strength building, movement coaching and gym training tailored to improve mobility, support recovery and help you stay active.', svc('physio-fitness'), '/services/gym'],
+  ['Mental & Emotional Wellness', 'Mindfulness, meditation, stress management, digital-detox activities and calming sessions to nurture emotional balance and mental well-being.', svc('mental-wellness'), '/about'],
+  ['Aqua Therapy', 'Swimming, coaching and gentle aqua therapy in a clean, temperature-controlled pool with trained lifeguards.', svc('aqua-home'), '/services/swimming-pool'],
+  ['Social & Corporate Wellness Events', 'Custom day-long or 5- to 7-day wellness workshops, pool gatherings, nutrition and hydration sessions, Class of Calm, health-check camps and free Friday meditation.', svc('social-events'), '/services/pool-parties-and-group'],
 ]
 
 export const heroSlides = [
@@ -87,15 +91,20 @@ export const pillars = [
   ['Detox', 'Panchakarma cleansing to reset body and mind.', '🍃'],
   ['Rejuvenate', 'Abhyanga and Shirodhara for deep renewal.', '✨'],
   ['Strengthen', 'Yoga and movement therapy for lasting vitality.', '💪'],
+  ['Physio & Gym', 'Comprehensive physiotherapy and modern gym facilities for holistic fitness.', '🏋️‍♂️'],
+  ['Relax', 'Meditation and mindfulness sessions for mental well-being.', '🧘‍♂️'],
+  ['Nutrition', 'Personalized dietary guidance to support overall wellness.', '🥗'],
+  ['Mindfulness', 'Guided meditation and mindfulness practices for mental clarity and emotional balance.', '🧘‍♀️'],
+  ['Grooming', 'Personal care and grooming services for overall wellness.', '💇‍♂️']
 ]
 
 export const therapies = [
-  ['Aqua Therapy', IMG.pool],
-  ['Abhyanga Massage', IMG.massage],
-  ['Panchakarma Detox', IMG.detox],
-  ['Yoga & Strength', IMG.yoga],
-  ['Shirodhara', IMG.rejuvenate],
-  ['Marma Therapy', IMG.strength],
+  ['Aqua Therapy', svc('t-aqua')],
+  ['Abhyanga Massage', svc('t-abhyanga')],
+  ['Panchakarma Detox', svc('t-panchakarma')],
+  ['Yoga & Strength', svc('t-yoga-strength')],
+  ['Shirodhara', svc('t-shirodhara')],
+  ['Marma Therapy', svc('t-marma')],
 ]
 
 export const packages = [
@@ -121,20 +130,49 @@ export const stats = [
 ]
 
 export const posts = [
-  ['Benefits of Abhyanga: Daily Oil Massage Explained', IMG.massage],
-  ['Panchakarma: What to Expect from Your First Detox', IMG.detox],
-  ['Why Aqua Therapy Complements Ayurvedic Healing', IMG.pool],
-  ['Yoga and Ayurveda: Building Strength the Natural Way', IMG.yoga],
+  ['Benefits of Abhyanga: Daily Oil Massage Explained', svc('blog-abhyanga')],
+  ['Panchakarma: What to Expect from Your First Detox', svc('blog-panchakarma')],
+  ['Why Aqua Therapy Complements Ayurvedic Healing', svc('blog-aqua')],
+  ['Yoga and Ayurveda: Building Strength the Natural Way', svc('blog-yoga')],
 ]
 
-export const marquee = ['SWIM', 'HEAL', 'DETOX', 'REJUVENATE', 'STRENGTHEN']
+export const marquee = [
+  'AYURVEDA',
+  'NATUROPATHY',
+  'PANCHAKARMA',
+  'PHYSIOTHERAPY',
+  'STRENGTH BUILDING',
+  'DESKERCISE',
+  'MINDFULNESS',
+  'MEDITATION',
+  'DIGITAL DETOX',
+  'AQUA THERAPY',
+  'SOCIAL WELLNESS',
+  'CORPORATE WELLNESS',
+  'CLASS OF CALM',
+]
+
+export const serviceOptions = [
+  'Ayurveda',
+  'Panchakarma',
+  'Naturopathy',
+  'Physiotherapy',
+  'Gymnasium & Fitness Training',
+  'Yoga',
+  'Mindfulness & Meditation',
+  'Digital Detox',
+  'Emotional Intelligence & Stress Management',
+  'Aqua Therapy / Swimming Pool',
+  'Pool Parties & Group Events',
+  'Social & Corporate Wellness Events',
+  'General enquiry',
+]
 
 export const contactInfo = {
   address: 'In Front of Sagar College Gate, Ayodhya Bypass Road, Minal, Bhopal, Madhya Pradesh.',
-  phone: '9098259789',
-  whatsapp: '91797 57017',
+  phones: ['90982 59789', '86026 38479'],
   email: 'info@yogananda.com',
-  hours: [['Monday to Friday', '8.00 - 20.00 hrs'], ['Saturday', '8.00 - 18.00 hrs'], ['Sunday', '9.00 - 14.00 hrs']],
+  hours: [['Monday to Friday', '8.00 - 20.00 hrs'], ['Saturday', '8.00 - 20.00 hrs'], ['Sunday', '9.00 - 14.00 hrs']],
 }
 
 export const servicePages = {
@@ -142,43 +180,53 @@ export const servicePages = {
     title: 'Ayurveda',
     tagline: 'Heal and detox with time-tested Ayurvedic care',
     heroImage: IMG.herbs,
-    introImage: IMG.ayur2,
+    introImage: svc('ayurveda-intro'),
     introTitle: 'Personalised Ayurvedic treatment, rooted in tradition',
     intro: 'Our vaidyas assess your prakriti and design a programme that treats the root cause. Every therapy uses authentic herbal oils and medicines prepared with care.',
     highlights: ['Prakriti and pulse diagnosis', 'Herbal oils and medicines', 'Diet and lifestyle guidance', 'Private therapy rooms'],
     offeringsTitle: 'Our Ayurvedic therapies',
     offerings: [
-      ['Abhyanga Massage', 'Warm oil full-body massage that relaxes muscles and improves circulation.', IMG.massage],
-      ['Shirodhara', 'A steady stream of warm oil on the forehead for deep calm and better sleep.', IMG.rejuvenate],
-      ['Panchakarma Detox', 'Five-fold cleansing programme to remove toxins and restore balance.', IMG.detox],
-      ['Swedana Herbal Steam', 'Herbal steam therapy to open channels and ease stiffness.', IMG.about2],
-      ['Marma Therapy', 'Gentle pressure on vital points to release blockages and pain.', IMG.strength],
-      ['Yoga & Pranayama', 'Guided practice to support healing and long-term vitality.', IMG.yoga],
+      ['Abhyangam', 'Full body oil massage.', svc('abhyangam')],
+      ['Sirodhara', 'Medicated oil therapy.', svc('sirodhara')],
+      ['Potali', 'Herbal bolus massage.', svc('potali')],
+      ['Kati Vasti', 'Lower back oil therapy.', svc('kati-vasti')],
+      ['Greeva', 'Neck oil therapy.', svc('greeva')],
+      ['Janu Vasti', 'Knee oil therapy.', svc('janu-vasti')],
+      ['Herbal Steam', 'Swedana therapy.', svc('herbal-steam')],
+      ['Kati Shan', 'Localized water therapy.', svc('kati-shan')],
+      ['Powder Massage', 'Herbal powder therapy.', svc('powder-massage')],
+      ['Enima Vasti', 'Medicated enema therapy.', svc('enima-vasti')],
     ],
-    plansTitle: 'Ayurveda packages',
+    plansTitle: 'Ayurveda treatment prices',
     plans: [
-      ['Abhyanga Full Body', '₹2,500', '60 min'],
-      ['Shirodhara Therapy', '₹3,200', '45 min'],
-      ['Herbal Steam & Swedana', '₹1,500', '30 min'],
-      ['Panchakarma (7 days)', '₹24,000', 'Residential'],
+      ['Abhyangam', '₹755/-'],
+      ['Sirodhara', '₹985/-'],
+      ['Potali', '₹855/-'],
+      ['Kati Vasti', '₹695/-'],
+      ['Greeva', '₹795/-'],
+      ['Janu Vasti', '₹895/-'],
+      ['Herbal Steam', '₹275/-'],
+      ['Kati Shan', '₹495/-'],
+      ['Powder Massage', '₹1,295/-'],
+      ['Enima Vasti', '₹495/-'],
     ],
   },
   gym: {
     title: 'Gym',
     tagline: 'Strengthen your body with expert-led training',
-    heroImage: IMG.gymHero,
-    introImage: IMG.gym2,
+    heroImage: svc('gym-hero'),
+    introImage: svc('gym-intro'),
     introTitle: 'A professional fitness space for every goal',
     intro: 'From strength training to mobility work, our certified trainers build programmes that complement Ayurvedic wellness. Train in a clean, well-equipped and supportive environment.',
     highlights: ['Certified personal trainers', 'Modern cardio and strength equipment', 'Diet plans by Ayurvedic nutritionists', 'Separate time slots for women'],
     offeringsTitle: 'Training programmes',
     offerings: [
-      ['Strength Training', 'Free weights and machines with progressive plans.', IMG.gym1],
-      ['Personal Training', 'One-to-one coaching tailored to your body and goals.', IMG.gym2],
-      ['Cardio & Endurance', 'Treadmills, cycles and guided conditioning sessions.', IMG.gym3],
-      ['Yoga & Mobility', 'Flexibility and posture classes to prevent injury.', IMG.yoga],
-      ['Group Classes', 'Energising batches for fat loss and fitness.', IMG.strength],
-      ['Rehab Conditioning', 'Safe return-to-strength programmes after injury.', IMG.massage],
+      ['Strength Training', 'Free weights and machines with progressive plans.', svc('strength-training')],
+      ['Personal Training', 'One-to-one coaching tailored to your body and goals.', svc('personal-training')],
+      ['Cardio & Endurance', 'Treadmills, cycles and guided conditioning sessions.', svc('cardio')],
+      ['Yoga & Mobility', 'Flexibility and posture classes to prevent injury.', svc('yoga-mobility')],
+      ['Group Classes', 'Energising batches for fat loss and fitness.', svc('group-classes')],
+      ['Rehab Conditioning', 'Safe return-to-strength programmes after injury.', svc('rehab')],
     ],
     plansTitle: 'Membership plans',
     plans: [
@@ -191,19 +239,19 @@ export const servicePages = {
   'swimming-pool': {
     title: 'Swimming Pool',
     tagline: 'Swim, relax and recover in a clean, safe pool',
-    heroImage: IMG.poolHero,
-    introImage: IMG.pool2,
+    heroImage: svc('pool-hero'),
+    introImage: svc('pool-intro'),
     introTitle: 'Temperature-controlled pool with trained lifeguards',
     intro: 'Our pool supports fitness, learning and therapy. Water is filtered daily and maintained at a comfortable temperature all year, with trained staff on duty at all times.',
     highlights: ['Daily filtered and tested water', 'Trained lifeguards on duty', 'Clean changing rooms and showers', 'Separate batches for kids and women'],
     offeringsTitle: 'Pool programmes',
     offerings: [
-      ['Lap Swimming', 'Open lanes for fitness swimmers.', IMG.pool1],
-      ['Learn to Swim', 'Structured coaching for beginners and kids.', IMG.pool3],
-      ['Aqua Therapy', 'Low-impact water exercises for joints and recovery.', IMG.pool],
-      ['Aqua Aerobics', 'Fun, full-body workout in the water.', IMG.pool2],
-      ['Kids Batch', 'Safe, supervised sessions for children.', IMG.pool3],
-      ['Advanced Coaching', 'Technique and stamina training for confident swimmers.', IMG.pool1],
+      ['Lap Swimming', 'Open lanes for fitness swimmers.', svc('lap-swimming')],
+      ['Learn to Swim', 'Structured coaching for beginners and kids.', svc('learn-to-swim')],
+      ['Aqua Therapy', 'Low-impact water exercises for joints and recovery.', svc('aqua-therapy')],
+      ['Aqua Aerobics', 'Fun, full-body workout in the water.', svc('aqua-aerobics')],
+      ['Kids Batch', 'Safe, supervised sessions for children.', svc('kids-batch')],
+      ['Advanced Coaching', 'Technique and stamina training for confident swimmers.', svc('advanced-coaching')],
     ],
     plansTitle: 'Swimming plans',
     plans: [
@@ -216,17 +264,17 @@ export const servicePages = {
   'pool-parties-and-group': {
     title: 'Pool Parties & Group Events',
     tagline: 'Make time together memorable with a poolside gathering',
-    heroImage: IMG.poolHero,
-    introImage: IMG.pool1,
+    heroImage: svc('party-hero'),
+    introImage: svc('party-intro'),
     introTitle: 'A refreshing setting for your next get-together',
     intro: 'Plan a poolside celebration or group visit with friends, family, classmates or colleagues. Share your preferred date and group size with our team, and we will help you arrange your booking.',
     highlights: ['Birthday and celebration bookings', 'Family and friends gatherings', 'School, club and team visits', 'Corporate group enquiries', 'Maximum 50 members per group', 'Snacks and starter breakfast included'],
     offeringsTitle: 'Gather by the pool',
     offerings: [
-      ['Birthday Pool Parties', 'Celebrate a special day with a pool visit for your invited group.', IMG.pool2],
-      ['Family & Friends', 'Spend time together with a group swimming session.', IMG.pool3],
-      ['School & Club Groups', 'Arrange a group visit for your school, club or team.', IMG.pool1],
-      ['Corporate Gatherings', 'Plan a refreshing group outing for colleagues.', IMG.poolHero],
+      ['Birthday Pool Parties', 'Celebrate a special day with a pool visit for your invited group.', svc('birthday-party')],
+      ['Family & Friends', 'Spend time together with a group swimming session.', svc('family-friends')],
+      ['School & Club Groups', 'Arrange a group visit for your school, club or team.', svc('school-club')],
+      ['Corporate Gatherings', 'Plan a refreshing group outing for colleagues.', svc('corporate')],
     ],
     plansTitle: 'Group booking options',
     plans: [

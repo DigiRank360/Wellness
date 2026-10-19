@@ -106,7 +106,7 @@ export default function Hero() {
 
       <div className="relative mt-6 overflow-hidden border-y border-brand/15 py-8 md:py-10">
         <div className="[mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
-          <div className="flex w-max animate-marquee items-center gap-8 whitespace-nowrap hover:[animation-play-state:paused] md:gap-12">
+          <div className="wellness-marquee-track flex w-max items-center gap-8 whitespace-nowrap hover:[animation-play-state:paused] md:gap-12">
             {Array.from({ length: 4 }).flatMap((_, r) =>
               marquee.map((w, i) => {
                 const Icon = marqueeIcons[i % marqueeIcons.length]
