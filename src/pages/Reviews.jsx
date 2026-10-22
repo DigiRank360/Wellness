@@ -1,4 +1,4 @@
-import { Quote, Star } from 'lucide-react'
+import { Quote, Star, UserRound } from 'lucide-react'
 import CTABanner from '../components/ui/CTABanner'
 import PageHero from '../components/ui/PageHero'
 import Reveal from '../components/ui/Reveal'
@@ -10,12 +10,14 @@ export default function Reviews() {
       <PageHero title="Patient Reviews" subtitle="Real stories from people who healed with us." image={IMG.pool} crumbs={['Reviews']} />
       <section className="container-x py-20">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {[...reviews, ...reviews].map(([n, t], i) => (
+          {reviews.map(([n, t], i) => (
             <Reveal key={i} delay={(i % 3) * 120}>
               <div className="card-lift relative h-full rounded-3xl bg-mint p-7">
                 <Quote size={36} className="absolute right-6 top-5 text-accent/30" />
                 <div className="mb-4 flex items-center gap-3">
-                  <img src={IMG.avatar} alt="" className="h-12 w-12 rounded-full border-2 border-brand-light object-cover" />
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border-2 border-brand-light bg-white/70 text-brand">
+                    <UserRound aria-hidden="true" size={22} />
+                  </span>
                   <div>
                     <h3 className="text-sm font-bold text-brand-dark">{n}</h3>
                     <span className="text-[10px] uppercase tracking-wider text-ink/50">Verified Patient</span>

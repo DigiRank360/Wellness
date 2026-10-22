@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 import Layout from './components/layout/Layout'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import Gallery from './pages/Gallery'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import Reviews from './pages/Reviews'
@@ -16,6 +17,7 @@ export default function App() {
       <Route element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
+        <Route path="gallery" element={<Gallery />} />
         <Route path="services/ayurveda" element={<Ayurveda />} />
         <Route path="services/gym" element={<Gym />} />
         <Route path="services/swimming-pool" element={<SwimmingPool />} />

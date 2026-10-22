@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import panchkarmaImage from '../../assets/panchkarma.png'
 import { IMG, pillars } from '../../data/content'
 import Reveal from '../ui/Reveal'
 import SectionHeading from '../ui/SectionHeading'
@@ -10,12 +11,12 @@ export default function About() {
     <section className="container-x py-20">
       <div className="grid items-center gap-14 lg:grid-cols-2">
         <Reveal className="relative">
-          <img src={IMG.about} alt="Ayurvedic treatment" className="h-[460px] w-full rounded-[2rem] object-cover" />
+          <img src={panchkarmaImage} alt="Panchakarma Ayurvedic therapies" className="h-[460px] w-full rounded-[2rem] object-cover" />
           <img src={IMG.about2} alt="" className="absolute -bottom-8 -right-4 hidden h-48 w-48 animate-float rounded-3xl border-8 border-white object-cover shadow-xl md:block" />
-          <div className="absolute -left-4 top-8 rounded-2xl bg-accent px-5 py-4 text-center text-white shadow-xl">
+          {/* <div className="absolute -left-4 top-8 rounded-2xl bg-accent px-5 py-4 text-center text-white shadow-xl">
             <div className="text-3xl font-extrabold">13+</div>
             <div className="text-[11px] uppercase tracking-wider">Years Experience</div>
-          </div>
+          </div> */}
         </Reveal>
 
         <div>

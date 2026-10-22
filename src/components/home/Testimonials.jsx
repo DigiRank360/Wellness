@@ -1,4 +1,5 @@
-import { IMG, reviews, stats } from '../../data/content'
+import { UserRound } from 'lucide-react'
+import { reviews, stats } from '../../data/content'
 import CountUp from '../ui/CountUp'
 import Reveal from '../ui/Reveal'
 import SectionHeading from '../ui/SectionHeading'
@@ -13,7 +14,9 @@ export default function Testimonials() {
             <div className="card-lift relative h-full rounded-3xl bg-mint p-7">
               <span className="absolute right-6 top-4 font-serif text-6xl leading-none text-accent/30">“</span>
               <div className="mb-4 flex items-center gap-3">
-                <img src={IMG.avatar} alt="" className="h-12 w-12 rounded-full border-2 border-brand-light object-cover" />
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border-2 border-brand-light bg-white/70 text-brand">
+                  <UserRound aria-hidden="true" size={22} />
+                </span>
                 <div>
                   <h3 className="text-sm font-bold text-brand-dark">{n}</h3>
                   <span className="text-[10px] uppercase tracking-wider text-ink/50">Verified Patient</span>

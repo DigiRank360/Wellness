@@ -98,7 +98,7 @@ export default function Header() {
           </div>
         </div>
 
-        <div className={`overflow-hidden bg-white transition-all duration-300 lg:hidden ${open ? 'max-h-[32rem] border-t border-mint' : 'max-h-0'}`}>
+        <div className={`bg-white transition-all duration-300 lg:hidden ${open ? 'max-h-[calc(100vh-5rem)] overflow-y-auto border-t border-mint' : 'max-h-0 overflow-hidden'}`}>
           <nav className="container-x flex flex-col py-3" onClick={(e) => e.target.closest('a') && setOpen(false)}>
             {nav.map((item) =>
               item.children ? (

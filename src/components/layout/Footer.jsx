@@ -1,33 +1,54 @@
-import { ArrowUp, Clock, Facebook, Instagram, Linkedin, MapPin, Mail, MessageCircle, Phone, Twitter } from 'lucide-react'
-import { Link } from 'react-router-dom'
-import { contactInfo } from '../../data/content'
-import Logo from './Logo'
+import {
+  ArrowUp,
+  Clock,
+  Facebook,
+  Instagram,
+  Linkedin,
+  MapPin,
+  Mail,
+  MessageCircle,
+  Phone,
+  Twitter,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import { contactInfo } from "../../data/content";
+import Logo from "./Logo";
 
 const socials = [
-  ['Facebook', Facebook],
-  ['Twitter', Twitter],
-  ['LinkedIn', Linkedin],
-  ['Instagram', Instagram],
-]
+  ["Facebook", Facebook],
+  ["LinkedIn", Linkedin],
+  ["Instagram", Instagram],
+];
 
 const links = [
-  ['Home', '/'], ['About Us', '/about'],
-  ['Ayurveda', '/services/ayurveda'], ['Physiotherapy & Gym', '/services/gym'],
-  ['Swimming Pool', '/services/swimming-pool'],
-  ['Pool Parties & Group', '/services/pool-parties-and-group'], ['Reviews', '/reviews'],
-  ['Contact', '/contact'],
-]
+  ["Home", "/"],
+  ["About Us", "/about"],
+  ["Ayurveda", "/services/ayurveda"],
+  ["Physiotherapy & Gym", "/services/gym"],
+  ["Swimming Pool", "/services/swimming-pool"],
+  ["Pool Parties & Group", "/services/pool-parties-and-group"],
+  ["Reviews", "/reviews"],
+  ["Contact", "/contact"],
+];
 
-const hours = [['Monday to Friday', '8.00 - 20.00 hrs'], ['Saturday', '8.00 - 18.00 hrs'], ['Sunday', '9.00 - 14.00 hrs']]
+const hours = [
+  ["Monday to Friday", "8.00 - 20.00 hrs"],
+  ["Saturday", "8.00 - 20.00 hrs"],
+  ["Sunday", "9.00 - 14.00 hrs"],
+];
 
 const contacts = [
   [MapPin, contactInfo.address],
-  ...contactInfo.phones.map((p) => [Phone, p, `tel:${p.replace(/\s/g, '')}`]),
-  [MessageCircle, `WhatsApp: ${contactInfo.phones[0]}`, `https://wa.me/91${contactInfo.phones[0].replace(/\D/g, '')}`],
+  ...contactInfo.phones.map((p) => [Phone, p, `tel:${p.replace(/\s/g, "")}`]),
+  [
+    MessageCircle,
+    `WhatsApp: ${contactInfo.phones[0]}`,
+    `https://wa.me/91${contactInfo.phones[0].replace(/\D/g, "")}`,
+  ],
   [Mail, contactInfo.email, `mailto:${contactInfo.email}`],
-]
+];
 
-const heading = 'mb-5 text-lg font-bold text-brand-dark'
+const heading = "mb-5 text-lg font-bold text-brand-dark";
 
 export default function Footer() {
   return (
@@ -41,7 +62,14 @@ export default function Footer() {
             <h4 className={heading}>Useful Links</h4>
             <ul className="mx-auto grid max-w-xs grid-cols-2 gap-x-8 gap-y-3 text-sm lg:mx-0">
               {links.map(([n, href]) => (
-                <li key={n}><Link to={href} className="text-ink/80 transition hover:text-accent">{n}</Link></li>
+                <li key={n}>
+                  <Link
+                    to={href}
+                    className="text-ink/80 transition hover:text-accent"
+                  >
+                    {n}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
@@ -49,13 +77,24 @@ export default function Footer() {
           <div className="order-1 flex flex-col items-center md:order-3 md:col-span-2 lg:order-2 lg:col-span-1">
             <Logo className="h-16" />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink/80">
-              Ayurveda | Naturopathy | Physiotherapy | Gymnasium | Aqua Therapy | Swimming Pool. Reconnect with Nature. Restore Your Balance. Rediscover Your Wellbeing.
+              Ayurveda | Naturopathy | Physiotherapy | Gymnasium | Aqua Therapy
+              | Swimming Pool. Reconnect with Nature. Restore Your Balance.
+              Rediscover Your Wellbeing.
             </p>
             <ul className="mt-4 space-y-2 text-xs text-ink/80">
               {contacts.map(([Icon, text, href]) => (
-                <li key={text} className="flex items-start justify-center gap-2">
+                <li
+                  key={text}
+                  className="flex items-start justify-center gap-2"
+                >
                   <Icon size={14} className="mt-0.5 shrink-0 text-accent" />
-                  {href ? <a href={href} className="hover:text-accent">{text}</a> : <span>{text}</span>}
+                  {href ? (
+                    <a href={href} className="hover:text-accent">
+                      {text}
+                    </a>
+                  ) : (
+                    <span>{text}</span>
+                  )}
                 </li>
               ))}
             </ul>
@@ -74,32 +113,46 @@ export default function Footer() {
           </div>
 
           <div className="order-3 md:order-2 lg:order-3 lg:justify-self-end">
-            <h4 className={`${heading} flex items-center justify-center gap-2 lg:justify-end`}><Clock size={18} className="text-accent" />Working Time</h4>
+            <h4
+              className={`${heading} flex items-center justify-center gap-2 lg:justify-end`}
+            >
+              <Clock size={18} className="text-accent" />
+              Working Time
+            </h4>
             <ul className="mx-auto max-w-xs space-y-3 text-sm lg:mx-0">
               {hours.map(([d, t]) => (
-                <li key={d} className="flex justify-between gap-6 text-ink/80"><span>{d}</span><span className="font-medium text-ink">{t}</span></li>
+                <li key={d} className="flex justify-between gap-6 text-ink/80">
+                  <span>{d}</span>
+                  <span className="font-medium text-ink">{t}</span>
+                </li>
               ))}
             </ul>
           </div>
         </div>
 
         <div className="relative mt-12 flex flex-col items-center gap-4 rounded-t-3xl bg-white px-6 py-5 text-xs text-ink/80 sm:flex-row sm:justify-between">
-          <span className="text-center sm:text-left">© {new Date().getFullYear()} Yogananda Wellness. All Rights Reserved</span>
+          <span className="text-center sm:text-left">
+            © {new Date().getFullYear()} Yogananda Wellness. All Rights Reserved
+          </span>
           <button
             type="button"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             aria-label="Back to top"
             className="grid h-11 w-11 place-items-center rounded-full bg-accent text-white shadow-md transition hover:bg-accent-dark sm:absolute sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2"
           >
             <ArrowUp size={18} />
           </button>
           <div className="flex items-center gap-3">
-            <a href="#" className="hover:text-accent">Terms and conditions</a>
+            <a href="#" className="hover:text-accent">
+              Terms and conditions
+            </a>
             <span className="h-3 w-px bg-ink/20" />
-            <a href="#" className="hover:text-accent">Privacy policy</a>
+            <a href="#" className="hover:text-accent">
+              Privacy policy
+            </a>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
