@@ -251,7 +251,8 @@ export const serviceOptions = [
 export const contactInfo = {
   address:
     "In Front of Sagar College Gate, Ayodhya Bypass Road, Minal, Bhopal, Madhya Pradesh.",
-  phones: ["90982 59789", "86026 38479"],
+  phones: ["90982 59789"],
+  whatsapp: "9981504644",
   email: "info@yogananda.com",
   hours: [
     ["Monday to Friday", "8.00 - 20.00 hrs"],
