@@ -9,7 +9,7 @@ const field = 'w-full rounded-xl border border-ink/10 bg-white px-4 py-3 text-sm
 const info = [
   [MapPin, 'Address', contactInfo.address, null],
   ...contactInfo.phones.map((p, i) => [Phone, i === 0 ? 'Phone' : 'Phone 2', p, `tel:${p.replace(/\s/g, '')}`]),
-  [MessageCircle, 'WhatsApp', contactInfo.phones[0], `https://wa.me/91${contactInfo.phones[0].replace(/\D/g, '')}`],
+  [MessageCircle, 'WhatsApp', contactInfo.whatsapp, `https://wa.me/91${contactInfo.whatsapp.replace(/\D/g, '')}`],
   [Mail, 'Email', contactInfo.email, `mailto:${contactInfo.email}`],
   [Clock, 'Working Hours', 'Mon - Sat: 8:00 - 20:00, Sun: 9:00 - 14:00', null],
 ]

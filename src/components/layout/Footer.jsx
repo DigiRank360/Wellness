@@ -42,8 +42,8 @@ const contacts = [
   ...contactInfo.phones.map((p) => [Phone, p, `tel:${p.replace(/\s/g, "")}`]),
   [
     MessageCircle,
-    `WhatsApp: ${contactInfo.phones[0]}`,
-    `https://wa.me/91${contactInfo.phones[0].replace(/\D/g, "")}`,
+    `WhatsApp: ${contactInfo.whatsapp}`,
+    `https://wa.me/91${contactInfo.whatsapp.replace(/\D/g, "")}`,
   ],
   [Mail, contactInfo.email, `mailto:${contactInfo.email}`],
 ];
