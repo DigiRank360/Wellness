@@ -19,10 +19,7 @@ export const IMG = {
   video: img("photo-1515377905703-c4788e51af15", 1400),
   avatar: img("photo-1552693673-1bf958298935", 200),
   herbs: img("photo-1512290923902-8a9f81dc236c", 1400),
-  gymHero: img(
-    "https://peachphysio.ca/wp-content/uploads/2024/11/peach-physiotherapy-chatham-kent-on-30.png",
-    1600,
-  ),
+  gymHero: svc("gym-hero"),
   gym1: img("photo-1571019613454-1cb2f99b2d8b", 800),
   gym2: img("photo-1517836357463-d25dfeac3438", 800),
   gym3: img("photo-1540497077202-7c8a3999166f", 800),

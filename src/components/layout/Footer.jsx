@@ -143,13 +143,13 @@ export default function Footer() {
             <ArrowUp size={18} />
           </button>
           <div className="flex items-center gap-3">
-            <a href="#" className="hover:text-accent">
+            <Link to="/terms-and-conditions" className="hover:text-accent">
               Terms and conditions
-            </a>
+            </Link>
             <span className="h-3 w-px bg-ink/20" />
-            <a href="#" className="hover:text-accent">
+            <Link to="/privacy-policy" className="hover:text-accent">
               Privacy policy
-            </a>
+            </Link>
           </div>
         </div>
       </div>

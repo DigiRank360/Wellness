@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { Clock, Mail, MapPin, MessageCircle, Phone, Send } from 'lucide-react'
 import { contactInfo, serviceOptions } from '../../data/content'
+import { submitContactForm } from '../../lib/submitContactForm'
+import { createWhatsAppUrl } from '../../lib/whatsapp'
 import Reveal from '../ui/Reveal'
 import SectionHeading from '../ui/SectionHeading'
 
@@ -15,12 +17,30 @@ const info = [
 ]
 
 export default function ContactEnquiry() {
-  const [sent, setSent] = useState(false)
+  const [status, setStatus] = useState({ state: 'idle', message: '', whatsappUrl: '' })
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault()
-    setSent(true)
-    e.target.reset()
+    const form = e.currentTarget
+    const whatsappWindow = window.open('about:blank', '_blank')
+    if (whatsappWindow) whatsappWindow.opener = null
+    setStatus({ state: 'submitting', message: '', whatsappUrl: '' })
+    try {
+      await submitContactForm(form)
+      const whatsappUrl = createWhatsAppUrl(contactInfo.whatsapp, form, 'enquiry')
+      if (whatsappWindow) {
+        whatsappWindow.location.href = whatsappUrl
+      }
+      form.reset()
+      setStatus({
+        state: 'success',
+        message: 'Your enquiry has been saved. Send the prefilled message in WhatsApp.',
+        whatsappUrl,
+      })
+    } catch (error) {
+      whatsappWindow?.close()
+      setStatus({ state: 'error', message: error.message })
+    }
   }
 
   return (
@@ -61,8 +81,37 @@ export default function ContactEnquiry() {
               <textarea required name="message" rows="5" className={`${field} sm:col-span-2`} placeholder="Your message*" />
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-4">
-              <button className="btn-primary">Send Enquiry <Send size={16} /></button>
-              {sent && <p className="text-sm font-medium text-brand">Thank you! We will contact you soon.</p>}
+              <input
+                aria-hidden="true"
+                autoComplete="off"
+                className="absolute -left-[10000px]"
+                name="website"
+                tabIndex={-1}
+                type="text"
+              />
+              <button className="btn-primary" disabled={status.state === 'submitting'}>
+                {status.state === 'submitting' ? 'Sending…' : 'Send Enquiry'} <Send size={16} />
+              </button>
+              {status.message && (
+                <div className="text-sm font-medium">
+                  <p
+                    role={status.state === 'error' ? 'alert' : 'status'}
+                    className={status.state === 'error' ? 'text-red-700' : 'text-brand'}
+                  >
+                    {status.message}
+                  </p>
+                  {status.whatsappUrl && (
+                    <a
+                      href={status.whatsappUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-1 inline-block text-brand underline"
+                    >
+                      Open WhatsApp if it did not open
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
           </form>
         </Reveal>

@@ -5,7 +5,9 @@ import Contact from './pages/Contact'
 import Gallery from './pages/Gallery'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
+import PrivacyPolicy from './pages/PrivacyPolicy'
 import Reviews from './pages/Reviews'
+import TermsAndConditions from './pages/TermsAndConditions'
 import Ayurveda from './pages/services/Ayurveda'
 import Gym from './pages/services/Gym'
 import PoolPartiesAndGroup from './pages/services/PoolPartiesAndGroup'
@@ -24,6 +26,8 @@ export default function App() {
         <Route path="services/pool-parties-and-group" element={<PoolPartiesAndGroup />} />
         <Route path="reviews" element={<Reviews />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="privacy-policy" element={<PrivacyPolicy />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
