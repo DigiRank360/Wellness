@@ -398,12 +398,13 @@ export const servicePages = {
         svc("advanced-coaching"),
       ],
     ],
-    plansTitle: "Swimming plans",
+    plansTitle: "Swimming packages",
     plans: [
-      ["Single Session", "₹300", "1 visit"],
-      ["Monthly Pass", "₹2,500", "1 month"],
-      ["Learn to Swim (12 classes)", "₹4,500", "Coaching"],
-      ["Aqua Wellness Session", "₹1,800", "45 min"],
+      ["Per Hour", "₹250/-", "1 hour"],
+      ["Monthly", "₹3,000/-", "1 month"],
+      ["Quarterly", "₹7,500/-", "3 months"],
+      ["Half Yearly", "₹12,500/-", "6 months"],
+      ["Yearly", "₹15,000/-", "12 months"],
     ],
   },
   "pool-parties-and-group": {
