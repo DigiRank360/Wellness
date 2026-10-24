@@ -3,21 +3,18 @@ import {
   Clock,
   Facebook,
   Instagram,
-  Linkedin,
   MapPin,
   Mail,
   MessageCircle,
   Phone,
-  Twitter,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { contactInfo } from "../../data/content";
 import Logo from "./Logo";
 
 const socials = [
-  ["Facebook", Facebook],
-  ["LinkedIn", Linkedin],
-  ["Instagram", Instagram],
+  ["Facebook", Facebook, "https://www.facebook.com/p/Yogananda-Ayurveda-61595126906500/"],
+  ["Instagram", Instagram, "https://www.instagram.com/yogananda.ayurveda/"],
 ];
 
 const links = [
@@ -99,10 +96,12 @@ export default function Footer() {
               ))}
             </ul>
             <div className="mt-5 flex gap-3">
-              {socials.map(([label, Icon]) => (
+              {socials.map(([label, Icon, href]) => (
                 <a
                   key={label}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="grid h-10 w-10 place-items-center rounded-full bg-white text-ink shadow-sm transition duration-300 hover:-translate-y-1 hover:bg-brand hover:text-white"
                 >
